@@ -17,6 +17,11 @@ public class Datos extends javax.swing.JFrame {
     public Datos() {
         initComponents();
     }
+    
+    public Datos(String nombre) {
+        initComponents();
+        this.nombre = nombre;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -90,7 +95,13 @@ public class Datos extends javax.swing.JFrame {
         
         String sexo = "";
         
-        sexo = jRadioButtonHombre.getText();
+        if (jRadioButtonMujer.isSelected()) {
+            sexo = "Mujer";
+        }else{
+            sexo = "Hombre";
+        }
+        
+        jTextAreaDatos.setText(jTextAreaDatos.getText() + "\n" + nombre + " - " + sexo);
         
     }//GEN-LAST:event_jButtonAñadirMouseClicked
 
@@ -128,7 +139,7 @@ public class Datos extends javax.swing.JFrame {
             }
         });
     }
-
+    private String nombre;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButtonAñadir;

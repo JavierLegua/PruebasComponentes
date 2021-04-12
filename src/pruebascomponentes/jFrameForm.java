@@ -91,7 +91,7 @@ public class jFrameForm extends javax.swing.JFrame {
         
         nombre = jTextFieldNombre.getText();
         
-        Datos d = new Datos();
+        Datos d = new Datos(nombre);
         d.setVisible(true);
         this.dispose();
         
